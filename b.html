@@ -1,0 +1,80 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="validation-tag" content="ssad/tetris_web/page/adapt_pc" />
+  <title>小鹿网络</title>
+  <style>
+    html,
+    body{
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      background: #f1f1f1;
+    }
+    .y-wrap{
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      width: 415px;
+      height: 100%;
+      margin: 0 auto;
+      -webkit-border-radius: 4px;
+      border-radius: 4px;
+      box-shadow: 2px 3px 10px #999;
+    }
+    .y-wrap > iframe{
+      background: #eee;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+    .y-qrcode{
+      position: absolute;
+      top: 117px;
+      left: 437px;
+      width: 220px;
+      height: 240px;
+      background: #fff;
+      box-sizing: border-box;
+    }
+    .y-qrcode canvas {
+      margin: 20px;
+    }
+    .y-qrcode img {
+      margin: 10px;
+    }
+    .y-qrcode > .y-desc {
+      width: 100%;
+      font-size: 12px;
+      color: #999999;
+      text-align: center;
+      font-family: PingFangSC-Regular;
+      bottom: 5px;
+      position: absolute;
+    }
+  </style>
+</head>
+<body>
+  <div class="y-wrap">
+    <iframe src="https://qianhu.wejianzhan.com/site/wjz9rjf7/3cc8f49f-c74d-48b3-b091-5f25928167ee?showpageinpc&#x3D;1&amp;timestamp&#x3D;1684931274886&amp;fid&#x3D;nHmLnj64PHRkP16dnWmdrj03PH7xnWcdg1n&amp;ch&#x3D;4&amp;ch&#x3D;4&amp;bd_vid&#x3D;nHmLnj64PHRkP16dnWmdrj03PH7xnWcdg1PxnH0sg1wxP1Rkn163PWTsPjm&amp;bd_bxst&#x3D;EiaKTz000jRB38x900nD0ZuFvs2actv50s0000BvVVQYVqEQEOlpt6C00000cbPjP1PAPbFAnH9KfHRzrHbzfH63njf1wW-An1KAnWb3xj06PRNanRPKP1TdwjTsPjDYwRR1n1P7fHcsPWN7nj-awjR9kZmiKO-FtfD000KhZlKSDf0002i57W2P0000j60O0fBvVoxUnH0sna1feUQqcQpvyivv1noHkogczn57YogrtHDsnjKSnTLzQIxRdEo5soy-zr8Ov600c69ZMs"></iframe>
+    <div class="y-qrcode">
+      <div class="y-desc">请扫描上方的二维码预览</div>
+    </div>
+  </div>
+  <script src="https://jianzhan-fe.cdn.bcebos.com/js/qrcode.js"></script>
+  <script>
+    var link = window.location ? window.location.href: "https://isite.baidu.com";
+    var ele = document.querySelector('.y-qrcode');
+    var qrcode = new QRCode(ele, {
+            width : 200,
+            height : 200
+        });
+    qrcode.makeCode(link);
+
+  </script>
+</body>
